@@ -41,7 +41,7 @@ export const ReportPage = () => {
   }
 
   return (
-    <div className="py-6 text-lg lg:max-w-5xl lg:mx-auto">
+    <div className="px-4 py-6 text-lg lg:max-w-5xl lg:mx-auto">
       {/* Page Heading */}
       <h1 className="mb-4 text-3xl font-bold text-center text-primary">
         Report a Facility Issue
