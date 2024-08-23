@@ -18,6 +18,7 @@ export const ReportFormSchema = z.object({
       message: "Level must be one of 100, 200, 300, 400, 500, 600, or 700",
     }),
   }),
+  facility: z.string().min(3, { message: "Please select a facility" }),
 
   message: z
     .string()

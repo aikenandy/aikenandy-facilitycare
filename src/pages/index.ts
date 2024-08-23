@@ -1,5 +1,5 @@
-export { ReportPage } from "./report";
+export { HomePage } from "./home";
 
-export { HomePage } from "./home/HomePage";
+export { ReportPage } from "./report";
 
 export { AboutPage } from "./about/AboutPage";
