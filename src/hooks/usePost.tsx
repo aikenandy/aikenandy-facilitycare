@@ -4,13 +4,11 @@ import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { z } from "zod";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-
 type ReportProps = z.infer<typeof ReportFormSchema>;
 
 export async function addReport(report: ReportProps) {
   try {
-    const response = await axios.post(`${BASE_URL}/api/user/report`, report);
+    const response = await axios.post(`/api/user/report`, report);
     return response.data;
   } catch (error) {
     console.error(error);

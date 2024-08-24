@@ -1,4 +1,4 @@
-export { AdminPage } from "./dashboard";
+export { AdminPageLayout, IssuesPage, FacilitiesPage } from "./dashboard";
 
 export { AboutPage } from "./about";
 
