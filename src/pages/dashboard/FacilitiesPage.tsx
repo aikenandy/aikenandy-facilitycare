@@ -13,10 +13,22 @@ export const FacilitiesPage = () => {
         zoom={17}
         scrollWheelZoom
       >
+        {/* OpenStreetMap Tile Layer */}
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+        {/* KNUST TMS Tile Layer */}
+        <TileLayer
+          url="https://knust-tms.intdeltas.com/tms/{z}/{x}/{y}.png"
+          tms={true}
+          opacity={1}
+          attribution="Geomatic Eng., KNUST, 2024"
+          minZoom={2}
+          maxZoom={22}
+        />
+
         <GeoJSON
           data={collegebuildings as never}
           style={() => ({

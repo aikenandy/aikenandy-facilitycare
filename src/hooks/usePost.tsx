@@ -1,14 +1,17 @@
-import { ReportFormSchema } from "@/validators/schema";
+import { adminFormSchema, ReportFormSchema } from "@/validators/schema";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { z } from "zod";
 
-type ReportProps = z.infer<typeof ReportFormSchema>;
+const combinedSchema = z.union([adminFormSchema, ReportFormSchema]);
 
-export async function addReport(report: ReportProps) {
+export async function addReport(
+  url: string,
+  data: z.infer<typeof combinedSchema>
+) {
   try {
-    const response = await axios.post(`/api/user/report`, report);
+    const response = await axios.post(url, data);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -20,9 +23,10 @@ export async function addReport(report: ReportProps) {
   }
 }
 
-export const usePost = () => {
+export const usePost = (url: string) => {
   return useMutation({
-    mutationFn: (field: ReportProps) => addReport(field),
+    mutationFn: (field: z.infer<typeof combinedSchema>) =>
+      addReport(url, field),
     onSuccess: (data) => {
       toast.success(data?.message);
     },

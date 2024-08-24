@@ -51,7 +51,7 @@ export const ReportPage = () => {
     mutate: postReport,
     isPending: isExecuting,
     isSuccess: isPostSuccessful,
-  } = usePostReport();
+  } = usePostReport("/api/user/report");
 
   useEffect(() => {
     if (isPostSuccessful) reset();
@@ -59,9 +59,7 @@ export const ReportPage = () => {
 
   async function onSubmit(data: z.infer<typeof ReportFormSchema>) {
     console.log(data);
-    if (isExecuting) {
-      toast.custom("Sending report");
-    }
+   
     postReport(data);
 
     if (isPostSuccessful) navigate("/");
