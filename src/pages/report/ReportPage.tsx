@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/select";
 
 import { Input } from "@/components/ui/input";
+import { useNavigate } from "react-router-dom";
 import { Asterisk, Loader, SendHorizontal } from "lucide-react";
 import toast from "react-hot-toast";
 import { ButtonLink } from "@/components/button";
@@ -27,6 +28,7 @@ import { usePost as usePostReport } from "@/hooks";
 import { useEffect } from "react";
 
 export const ReportPage = () => {
+  const navigate = useNavigate();
   const form = useForm<z.infer<typeof ReportFormSchema>>({
     resolver: zodResolver(ReportFormSchema),
     defaultValues: {
@@ -61,6 +63,8 @@ export const ReportPage = () => {
       toast.custom("Sending report");
     }
     postReport(data);
+
+    if (isPostSuccessful) navigate("/");
   }
 
   return (

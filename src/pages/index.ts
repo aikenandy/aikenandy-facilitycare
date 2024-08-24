@@ -1,5 +1,9 @@
+export { AdminPage } from "./dashboard";
+
+export { AboutPage } from "./about";
+
+export { SignInPage } from "./sign-in";
+
 export { HomePage } from "./home";
 
 export { ReportPage } from "./report";
-
-export { AboutPage } from "./about/AboutPage";

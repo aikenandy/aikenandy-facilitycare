@@ -1,6 +1,5 @@
 import { MonitorCog, Moon, Sun } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "./theme-provider";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
@@ -24,19 +24,19 @@ export function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          <Sun className="mr-2"/>
+          <Sun className="mr-2" />
           Light
         </DropdownMenuItem>
         <Separator />
 
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          <Moon className="mr-2"/>
+          <Moon className="mr-2" />
           Dark
         </DropdownMenuItem>
         <Separator />
 
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          <MonitorCog className="mr-2"/>
+          <MonitorCog className="mr-2" />
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
