@@ -26,6 +26,7 @@ import { ReportFormSchema } from "@/validators/schema";
 import { Textarea } from "@/components/ui/textarea";
 import { usePost as usePostReport } from "@/hooks";
 import { useEffect } from "react";
+import { sendAdminEmailReport } from "@/lib/sendAdminEmailReport";
 
 export const ReportPage = () => {
   const navigate = useNavigate();
@@ -59,8 +60,10 @@ export const ReportPage = () => {
 
   async function onSubmit(data: z.infer<typeof ReportFormSchema>) {
     console.log(data);
-   
+
     postReport(data);
+
+    await sendAdminEmailReport(data);
 
     if (isPostSuccessful) navigate("/");
   }
