@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { adminFormSchema } from "@/validators/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { usePost as useLogin } from "@/hooks";
 import { z } from "zod";
 import { useEffect } from "react";
@@ -24,7 +24,7 @@ export function SignInPage() {
     resolver: zodResolver(adminFormSchema),
     defaultValues: {
       name: "",
-      email: "",
+      email:  "",
       password: "",
     },
   });
@@ -36,6 +36,7 @@ export function SignInPage() {
   } = form;
 
   const {
+    data: loginData,
     mutate: login,
     isPending: isExecuting,
     isSuccess: isPostSuccessful,
@@ -44,15 +45,15 @@ export function SignInPage() {
   useEffect(() => {
     if (isPostSuccessful) {
       reset();
+      console.log(loginData);
+      localStorage.setItem("authenticated", loginData.authenticated);
       navigate("/dashboard");
     }
-  }, [isPostSuccessful, navigate, reset]);
+  }, [isPostSuccessful, loginData, navigate, reset]);
 
   async function onSubmit(data: z.infer<typeof adminFormSchema>) {
     console.log(data);
     login(data);
-
-    if (isExecuting) toast.success("Validating Credentials");
   }
 
   return (
@@ -128,12 +129,6 @@ export function SignInPage() {
                     <FormItem>
                       <div className="flex items-center">
                         <Label htmlFor="password">Password</Label>
-                        <Link
-                          to="/forgot-password"
-                          className="inline-block ml-auto text-sm underline"
-                        >
-                          Forgot your password?
-                        </Link>
                       </div>
                       <FormControl>
                         <Input

@@ -1,15 +1,23 @@
 import { LayoutDashboard } from "lucide-react";
-import { Link, Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 export const AdminPageLayout = () => {
+  const navigate = useNavigate();
+  const isAuthenticated = localStorage.getItem("authenticated");
+  console.log(isAuthenticated);
+  useEffect(() => {
+    if (isAuthenticated === null || !isAuthenticated) navigate("/sign-in");
+  });
+
   return (
     <section>
       <header className="flex items-center gap-1 px-5 py-5 font-semibold bg-secondary">
         <LayoutDashboard />
         <h1 className="text-primary">Dashboard</h1>
       </header>
-      <div className="grid grid-cols-[10rem_1fr] min-h-dvh">
-        <div className="px-5 space-y-2 font-medium bg-secondary">
+      <div className="grid sm:grid-cols-[10rem_1fr] min-h-dvh">
+        <div className="flex gap-3 px-5 pb-4 font-medium sm:pb-0 sm:items-center sm:block sm:space-y-2 bg-secondary">
           <li className="list-none hover:text-primary">
             <Link to="facilities">Facilities</Link>
           </li>

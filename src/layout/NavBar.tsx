@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { navLinks } from "../constants";
 import { ModeToggle } from "@/theme/mode-toggle";
+import { MobileNav } from ".";
 
 export const NavBar = () => {
   return (
@@ -15,10 +16,16 @@ export const NavBar = () => {
         </div>
         <ul className="flex items-center justify-center gap-3">
           {navLinks.map((link) => (
-            <li key={link.label} className="hover:text-blue-500">
+            <li
+              key={link.label}
+              className="hidden sm:inline-flex hover:text-blue-500"
+            >
               <NavLink to={link.path}>{link.label}</NavLink>
             </li>
           ))}
+        
+            <MobileNav />
+          
           <div>
             <ModeToggle />
           </div>

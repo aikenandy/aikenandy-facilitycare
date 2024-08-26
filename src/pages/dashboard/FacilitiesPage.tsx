@@ -38,12 +38,39 @@ export const FacilitiesPage = () => {
           })}
           onEachFeature={(feature, layer) => {
             if (feature.properties && feature.properties.name) {
-              const name = feature.properties.name;
-              const floors = feature.properties.floors;
+              const {
+                name,
+                floors,
+                condition,
+                purpose,
+                solar_p,
+                hvac_sys,
+                light_sys,
+                ac,
+                bulbs,
+                projectors,
+                tables,
+                chairs,
+                rooms,
+                fans,
+              } = feature.properties;
+
               layer.bindPopup(`
-                <strong>${name}</strong><br/>
-                 <strong> Floors: ${floors}</strong>
-              `);
+        <strong>${name}</strong><br/>
+        <strong>Floors:</strong> ${floors}<br/>
+        <strong>Condition:</strong> ${condition}<br/>
+        <strong>Purpose:</strong> ${purpose}<br/>
+        <strong>Solar Panels:</strong> ${solar_p}<br/>
+        <strong>HVAC System:</strong> ${hvac_sys}<br/>
+        <strong>Lighting System:</strong> ${light_sys}<br/>
+        <strong>AC Units:</strong> ${ac}<br/>
+        <strong>Bulbs:</strong> ${bulbs}<br/>
+        <strong>Projectors:</strong> ${projectors}<br/>
+        <strong>Tables:</strong> ${tables}<br/>
+        <strong>Chairs:</strong> ${chairs}<br/>
+        <strong>Rooms:</strong> ${rooms}<br/>
+        <strong>Fans:</strong> ${fans}
+      `);
             }
           }}
         />

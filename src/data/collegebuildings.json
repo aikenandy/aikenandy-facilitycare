@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "name": "collegebuildings",
+  "name": "buildings_attributes",
   "crs": {
     "type": "name",
     "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
@@ -9,33 +9,22 @@
     {
       "type": "Feature",
       "properties": {
-        "ogc_fid": 1,
-        "id": 2,
-        "name": "Engineering Workshop and Laboratory",
-        "floors": 1
-      },
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
-          [
-            [
-              [-1.56747404414109, 6.672499430271064],
-              [-1.566161329588386, 6.6727448524454],
-              [-1.566109682574746, 6.672458496318255],
-              [-1.567433103061527, 6.672222645429895],
-              [-1.56747404414109, 6.672499430271064]
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "ogc_fid": 2,
         "id": 1,
         "name": "Engineering Laboratory",
-        "floors": 1
+        "floors": 1,
+        "condition": "good",
+        "purpose": "laboratory",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 10,
+        "bulbs": 25,
+        "projectors": 3,
+        "tables": 500,
+        "chairs": 500,
+        "rooms": 5,
+        "fans": 20
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -63,10 +52,57 @@
     {
       "type": "Feature",
       "properties": {
+        "ogc_fid": 1,
+        "id": 2,
+        "name": "Engineering Workshop and Laboraory",
+        "floors": 1,
+        "condition": "good",
+        "purpose": "laboratory",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 10,
+        "bulbs": 20,
+        "projectors": 3,
+        "tables": 500,
+        "chairs": 500,
+        "rooms": 5,
+        "fans": 20
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-1.56747404414109, 6.672499430271064],
+              [-1.566161329588386, 6.6727448524454],
+              [-1.566109682574746, 6.672458496318255],
+              [-1.567433103061527, 6.672222645429895],
+              [-1.56747404414109, 6.672499430271064]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "ogc_fid": 3,
         "id": 3,
         "name": "Energy Annex",
-        "floors": 1
+        "floors": 1,
+        "condition": "good",
+        "purpose": "laboratory and office",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 5,
+        "bulbs": 10,
+        "projectors": 0,
+        "tables": 8,
+        "chairs": 8,
+        "rooms": 5,
+        "fans": 5
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -89,7 +125,19 @@
         "ogc_fid": 4,
         "id": 4,
         "name": "Caesar Building",
-        "floors": 4
+        "floors": 4,
+        "condition": "good",
+        "purpose": "classroom, lab and office",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 70,
+        "bulbs": 164,
+        "projectors": 10,
+        "tables": 1500,
+        "chairs": 1500,
+        "rooms": 53,
+        "fans": 150
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -118,7 +166,19 @@
         "ogc_fid": 5,
         "id": 5,
         "name": "Kumapley Building",
-        "floors": 2
+        "floors": 2,
+        "condition": "good",
+        "purpose": "auditorium and office",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 10,
+        "bulbs": 30,
+        "projectors": 2,
+        "tables": 500,
+        "chairs": 500,
+        "rooms": 7,
+        "fans": 10
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -141,7 +201,19 @@
         "ogc_fid": 6,
         "id": 6,
         "name": "Wascal Building",
-        "floors": 2
+        "floors": 2,
+        "condition": "good",
+        "purpose": "office",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 7,
+        "bulbs": 20,
+        "projectors": 0,
+        "tables": 7,
+        "chairs": 7,
+        "rooms": 7,
+        "fans": 7
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -168,7 +240,19 @@
         "ogc_fid": 7,
         "id": 7,
         "name": "Treck Building",
-        "floors": 2
+        "floors": 2,
+        "condition": "good",
+        "purpose": "office",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners",
+        "light_sys": "LED",
+        "ac": 8,
+        "bulbs": 10,
+        "projectors": 1,
+        "tables": 8,
+        "chairs": 8,
+        "rooms": 8,
+        "fans": 8
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -191,7 +275,19 @@
         "ogc_fid": 8,
         "id": 8,
         "name": "Petroleum Building",
-        "floors": 4
+        "floors": 4,
+        "condition": "good",
+        "purpose": "classroom and office",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 86,
+        "bulbs": 300,
+        "projectors": 25,
+        "tables": 3000,
+        "chairs": 3000,
+        "rooms": 25,
+        "fans": 200
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -214,7 +310,19 @@
         "ogc_fid": 9,
         "id": 9,
         "name": "New Engineering Building",
-        "floors": 4
+        "floors": 4,
+        "condition": "new",
+        "purpose": "classroom",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 24,
+        "bulbs": 80,
+        "projectors": 8,
+        "tables": 1200,
+        "chairs": 1200,
+        "rooms": 8,
+        "fans": 24
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -245,7 +353,19 @@
         "ogc_fid": 10,
         "id": 10,
         "name": "Bamfo Kwakye Building",
-        "floors": 4
+        "floors": 4,
+        "condition": "needs renovation",
+        "purpose": "classroom and office",
+        "solar_p": "no",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 40,
+        "bulbs": 70,
+        "projectors": 5,
+        "tables": 514,
+        "chairs": 514,
+        "rooms": 37,
+        "fans": 60
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -268,7 +388,19 @@
         "ogc_fid": 11,
         "id": 11,
         "name": "Levine Building",
-        "floors": 2
+        "floors": 2,
+        "condition": "good",
+        "purpose": "classroom and office",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 40,
+        "bulbs": 40,
+        "projectors": 1,
+        "tables": 190,
+        "chairs": 190,
+        "rooms": 24,
+        "fans": 20
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -291,7 +423,19 @@
         "ogc_fid": 12,
         "id": 12,
         "name": "Kwami Building",
-        "floors": 2
+        "floors": 2,
+        "condition": "good",
+        "purpose": "classroom",
+        "solar_p": "no",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 8,
+        "bulbs": 50,
+        "projectors": 3,
+        "tables": 400,
+        "chairs": 400,
+        "rooms": 4,
+        "fans": 30
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -310,7 +454,24 @@
     },
     {
       "type": "Feature",
-      "properties": { "ogc_fid": 13, "id": 13, "name": "N Block", "floors": 1 },
+      "properties": {
+        "ogc_fid": 13,
+        "id": 13,
+        "name": "N Block",
+        "floors": 1,
+        "condition": "needs renovation",
+        "purpose": "classroom and office",
+        "solar_p": "no",
+        "hvac_sys": "air conditioners and",
+        "light_sys": "LED",
+        "ac": 7,
+        "bulbs": 34,
+        "projectors": 2,
+        "tables": 324,
+        "chairs": 324,
+        "rooms": 16,
+        "fans": 32
+      },
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -338,7 +499,19 @@
         "ogc_fid": 14,
         "id": 14,
         "name": "IBRES Building",
-        "floors": 1
+        "floors": 1,
+        "condition": "good",
+        "purpose": "office",
+        "solar_p": "yes",
+        "hvac_sys": "air conditioners and fans",
+        "light_sys": "LED",
+        "ac": 8,
+        "bulbs": 10,
+        "projectors": 0,
+        "tables": 8,
+        "chairs": 8,
+        "rooms": 8,
+        "fans": 8
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -361,7 +534,19 @@
         "ogc_fid": 15,
         "id": 15,
         "name": "Engineering Security",
-        "floors": 1
+        "floors": 1,
+        "condition": "good",
+        "purpose": "security",
+        "solar_p": "no",
+        "hvac_sys": "fans",
+        "light_sys": "LED",
+        "ac": 0,
+        "bulbs": 1,
+        "projectors": 0,
+        "tables": 2,
+        "chairs": 2,
+        "rooms": 1,
+        "fans": 1
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -384,7 +569,19 @@
         "ogc_fid": 16,
         "id": 16,
         "name": "Engineering Study Tent",
-        "floors": 1
+        "floors": 1,
+        "condition": "good",
+        "purpose": "study area",
+        "solar_p": "no",
+        "hvac_sys": "no hvac system",
+        "light_sys": "LED",
+        "ac": 0,
+        "bulbs": 20,
+        "projectors": 0,
+        "tables": 5,
+        "chairs": 5,
+        "rooms": 0,
+        "fans": 0
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -407,7 +604,19 @@
         "ogc_fid": 17,
         "id": 17,
         "name": "Study Tent",
-        "floors": 1
+        "floors": 1,
+        "condition": "good",
+        "purpose": "study area",
+        "solar_p": "no",
+        "hvac_sys": "no hvac system",
+        "light_sys": "LED",
+        "ac": 0,
+        "bulbs": 2,
+        "projectors": 0,
+        "tables": 40,
+        "chairs": 40,
+        "rooms": 0,
+        "fans": 0
       },
       "geometry": {
         "type": "MultiPolygon",
