@@ -59,8 +59,6 @@ export const ReportPage = () => {
   }, [isPostSuccessful, reset]);
 
   async function onSubmit(data: z.infer<typeof ReportFormSchema>) {
-    console.log(data);
-
     postReport(data);
 
     await sendAdminEmailReport(data);
